@@ -1,0 +1,9 @@
+<%= form_with(model: feature_increase, local: true) do |f|%>
+  <div class="form-outline form-white mb-4">
+    <%= f.label :increase_units %>
+    <%= f.number_field :increase_units,min: 0, required:true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

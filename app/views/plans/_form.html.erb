@@ -1,0 +1,40 @@
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+            <div class="mb-md-5 mt-md-4 pb-5">
+              <% if @errors.present? %>
+                <div class "error">
+                  <ul>
+                    <% @errors.each do |error|%>
+                      <li><%= error %></li>
+                    <% end %>
+                  </ul>
+                </div>
+              <% end %>
+                 <%= form_for @plan do |f|%>
+                  <div class="form-outline form-white mb-4">
+                    <%= f.label :name %><br />
+                    <%= f.text_field :name, required:true %>
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <%= f.label :monthly_fee %><br />
+                    <%= f.number_field :monthly_fee, required:true %>
+                  </div>
+                  <div class="form-outline form-white mb-4">
+                    <%= f.label :feature_id %>
+                    <%= f.collection_select(:feature_ids, Feature.all, :id, :name, { prompt: 'Select Features', :selected => @plan.feature_ids })%>
+                  </div>
+                  <div class="actions">
+                    <%= f.submit %>
+                  </div>
+                <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

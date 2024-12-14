@@ -1,0 +1,21 @@
+<div style="margin-bottom: 10px">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to plan.name, plan_path(plan) %></h5>
+        <p class="card-text"><h4>Monthly Fee: $<%= plan.monthly_fee %></h4></p>
+          <% if current_user.buyer? %>
+            <ul class="plan-actions">
+            <% if !(subscription?(plan)).present? %>
+              <button type="button" class="btn btn-secondary"><%= link_to "Buy now!", plan_checkout_index_path(plan_id: plan.id), remote: true, method: :post %></button>
+            <% else%>
+              <button type="button" class="btn btn-secondary"><%= link_to "Unsubscribe",  unsubscribe_plan_plan_path(plan)%></button>
+            <% end %>
+          <% end %>
+            <% if current_user.admin? %>
+              <button type="button" class="btn btn-secondary"><%= link_to "Edit", edit_plan_path(plan) %></button>
+              <button type="button" class="btn btn-secondary"><%= link_to "Delete", plan_path(plan), method: :delete, data: { confirm: "Are you sure?" } %></button>
+            <% end %>
+          </ul>
+      </div>
+    </div>
+</div>

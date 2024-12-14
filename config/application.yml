@@ -1,0 +1,14 @@
+admin_mail_id: 'meerab.zafar@devsinc.com'
+admin_mail_key: 'jnxkmpbdptumrdaq'
+
+stripe_key: 'pk_test_51LPKp6LfUvx9S1a1Q3YLdZI4IkO4dAWzUq7ffsl2bKyJ9N0BAiTmbFrnITL8pCSaT73lK4oGRPrurGUAJXg2Xj3C00PBZogK8J'
+
+
+development:
+  CLOUD_NAME: dkdn2hkcf
+  API_KEY:    '956448869766912'
+  API_SECRET: xhDD5_v75tTWl-x7JnB_bGTmoUI
+production:
+  CLOUD_NAME: dkdn2hkcf
+  API_KEY:    '956448869766912'
+  API_SECRET: xhDD5_v75tTWl-x7JnB_bGTmoUI

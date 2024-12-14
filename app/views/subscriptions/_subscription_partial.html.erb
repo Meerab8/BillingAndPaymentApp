@@ -1,0 +1,8 @@
+  <tr>
+    <% @i=0 %>
+    <% @plan = subscribed_plans(subscription) %>
+      <td><%= @i+1 %></td>
+            <td><%= @plan.name %></td>
+            <td><%= @plan.monthly_fee%></td>
+        <%= render partial: "features/subscribed_features", collection: @plan.features, as: :feature %>
+  </tr>

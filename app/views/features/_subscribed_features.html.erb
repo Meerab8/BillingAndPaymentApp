@@ -1,0 +1,7 @@
+<td><%= feature.name %></td>
+<td><%= feature.unit_price %></td>
+<td><%= feature.max_unit_limit %></td>
+<td>
+  <% usage_feature = obtaining_features(@plan.id, feature.id) %>
+  <%= render "additional_features/used_features", feature_increase: usage_feature %>
+</td>

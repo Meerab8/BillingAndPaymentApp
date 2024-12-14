@@ -1,0 +1,14 @@
+<div style="margin-bottom: 10px">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title"><%= link_to feature.name, feature_path(feature) %></h5>
+        <p class="card-text"><h4>Code: <%= feature.code %></h4></p>
+        <p class="card-text"><h4>Unit Price: $<%= feature.unit_price %></h4></p>
+        <p class="card-text"><h4>Max Unit Limit: $<%= feature.max_unit_limit %></h4></p>
+            <ul class="feature-actions">
+              <button type="button" class="btn btn-secondary"><%= link_to "Edit", edit_feature_path(feature) %></button>
+              <button type="button" class="btn btn-secondary"><%= link_to 'Delete', feature_path(feature), method: :delete, data: { confirm: 'Are you sure?' } %></button>
+            </ul>
+      </div>
+    </div>
+</div>
